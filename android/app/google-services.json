@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "975119494892",
+    "project_id": "chorale-ad31f",
+    "storage_bucket": "chorale-ad31f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975119494892:android:16a089e424870b3ea3bfc9",
+        "android_client_info": {
+          "package_name": "com.example.chorale"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUo_zUOieA1m0k8plP9IlguNWsAJn7xDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
