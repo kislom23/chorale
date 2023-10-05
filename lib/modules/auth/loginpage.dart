@@ -1,7 +1,8 @@
-// ignore_for_file: avoid_print, library_private_types_in_public_api
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+// import 'package:day13/Animation/FadeAnimation.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -37,29 +38,113 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextField(
-              controller: _emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
+      backgroundColor: Colors.white,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            height: 400,
+            child: Stack(
+              children: <Widget>[
+                Positioned(
+                  top: -40,
+                  height: 400,
+                  width: width,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/background.png'),
+                            fit: BoxFit.fill
+                      )
+                    ),
+                  ),
+                ),
+                Positioned(
+                  height: 400,
+                  width: width+20,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/background-2.png'),
+                            fit: BoxFit.fill
+                      )
+                    ),
+                  ),
+                )
+              ],
             ),
-            TextField(
-              controller: _passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
-              obscureText: true,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text("login", style: TextStyle(color: Color.fromRGBO(49, 39, 79, 1), fontWeight: FontWeight.bold, fontSize: 30),),
+                SizedBox(height: 30,),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(196, 135, 198, .3),
+                        blurRadius: 20,
+                        offset: Offset(0, 10),
+                      )
+                    ]
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          border: Border(bottom: BorderSide(
+                            color: Colors.grey,
+                          ))
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "Username",
+                            hintStyle: TextStyle(color: Colors.grey)
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "Password",
+                            hintStyle: TextStyle(color: Colors.grey)
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20,),
+                Center(child: Text("Forgot Password", style: TextStyle(color: Color.fromRGBO(196, 135, 198, 1)),)),
+                SizedBox(height: 30,),
+                Container(
+                  height: 50,
+                  margin: EdgeInsets.symmetric(horizontal: 60),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Color.fromRGBO(49, 39, 79, 1),
+                  ),
+                  child: Center(
+                    child: Text("Login", style: TextStyle(color: Colors.white),),
+                  ),
+                ),
+                SizedBox(height: 30,),
+                Center(child: Text("Create Account", style: TextStyle(color: Color.fromRGBO(49, 39, 79, 6)),)),
+              ],
             ),
-            ElevatedButton(
-              onPressed: _signInWithEmailAndPassword,
-              child: const Text('Sign In'),
-            ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
