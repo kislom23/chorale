@@ -1,6 +1,11 @@
 # chorale
 
-A new Flutter project.
+Application de gestion de chorale
+  - Gestion des utilisateurs
+  - Gestion des finances
+  - Liste de présence  via l'application
+  - Ajout et modification des chansons
+  - etc...
 
 ## Getting Started
 
